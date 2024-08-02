@@ -1,10 +1,13 @@
-import React from "react";
-import { Text, View } from "react-native";
+import '../gesture-handler';
+
+import {NavigationContainer} from '@react-navigation/native';
+import React from 'react';
+import {Navigator} from './presentation/navigator/Navigator';
 
 export const ComponentsApp = () => {
   return (
-    <View>
-      <Text>ComponentsApp</Text>
-    </View>
+    <NavigationContainer>
+      <Navigator />
+    </NavigationContainer>
   );
 };

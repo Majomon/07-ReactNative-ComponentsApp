@@ -1,7 +1,7 @@
 import React from 'react';
 import {ScrollView, Text, View} from 'react-native';
 import {globalStyles} from '../../../config/theme/theme';
-import { Title } from '../../components/ui/Title';
+import {Title} from '../../components/ui/Title';
 
 export const menuItems = [
   // 01-animationMenuItems
@@ -72,7 +72,10 @@ export const HomeScreen = () => {
       <View style={globalStyles.globalMargin}>
         {/* Renderiza todo de una, no bajo demanda como el Flatlist */}
         <ScrollView>
-          <Title text='Opciones de menú'/>
+          <Title text="Opciones de menú" />
+          {menuItems.map(item => (
+            <Text key={item.component}>{item.name}</Text>
+          ))}
         </ScrollView>
       </View>
     </View>

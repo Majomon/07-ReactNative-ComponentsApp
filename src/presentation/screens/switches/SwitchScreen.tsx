@@ -3,6 +3,7 @@ import {CustomView} from '../../components/ui/CustomView';
 import {Card} from '../../components/ui/Card';
 import {Switch} from 'react-native';
 import {CustomSwitch} from '../../components/ui/CustomSwitch';
+import {Separator} from '../../components/ui/Separator';
 
 export const SwitchScreen = () => {
   /*  const [isEnabled, setIsEnabled] = useState(false);
@@ -22,13 +23,13 @@ export const SwitchScreen = () => {
           onChangue={value => setState({...state, isActive: value})}
           text="¿Está activo?"
         />
-
+        <Separator />
         <CustomSwitch
           isOn={state.isHungry}
           onChangue={value => setState({...state, isHungry: value})}
           text="¿Tiene hambre?"
         />
-
+        <Separator />
         <CustomSwitch
           isOn={state.isHappy}
           onChangue={value => setState({...state, isHappy: value})}

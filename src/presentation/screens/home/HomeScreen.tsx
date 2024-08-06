@@ -1,8 +1,10 @@
-import React from 'react';
-import {ScrollView, Text, View} from 'react-native';
+import React, {useContext} from 'react';
+import {ScrollView, View} from 'react-native';
 import {globalStyles} from '../../../config/theme/theme';
-import {Title} from '../../components/ui/Title';
 import {MenuItem} from '../../components/ui/MenuItem';
+import {Title} from '../../components/ui/Title';
+import {ThemeContext} from '../../context/ThemeContext';
+import {CustomView} from '../../components/ui/CustomView';
 
 const animationMenuItems = [
   {
@@ -69,48 +71,48 @@ const uiMenuItems = [
 ];
 
 export const HomeScreen = () => {
+  const {colors} = useContext(ThemeContext);
+
   return (
-    <View style={[globalStyles.mainContainer]}>
-      <View style={globalStyles.globalMargin}>
-        {/* Renderiza todo de una, no bajo demanda como el Flatlist */}
-        <ScrollView>
-          <Title text="Opciones de menú" />
+    <CustomView>
+      {/* Renderiza todo de una, no bajo demanda como el Flatlist */}
+      <ScrollView>
+        <Title text="Opciones de menú" />
 
-          {/* animationMenuItems */}
-          {animationMenuItems.map((item, index) => (
-            <MenuItem
-              key={item.component}
-              {...item}
-              isFirst={index === 0}
-              isLast={index === animationMenuItems.length - 1}
-            />
-          ))}
+        {/* animationMenuItems */}
+        {animationMenuItems.map((item, index) => (
+          <MenuItem
+            key={item.component}
+            {...item}
+            isFirst={index === 0}
+            isLast={index === animationMenuItems.length - 1}
+          />
+        ))}
 
-          <View style={{marginTop: 30}} />
+        <View style={{marginTop: 30}} />
 
-          {/* uiMenuItems */}
-          {uiMenuItems.map((item, index) => (
-            <MenuItem
-              key={item.component}
-              {...item}
-              isFirst={index === 0}
-              isLast={index === uiMenuItems.length - 1}
-            />
-          ))}
+        {/* uiMenuItems */}
+        {uiMenuItems.map((item, index) => (
+          <MenuItem
+            key={item.component}
+            {...item}
+            isFirst={index === 0}
+            isLast={index === uiMenuItems.length - 1}
+          />
+        ))}
 
-          <View style={{marginTop: 30}} />
+        <View style={{marginTop: 30}} />
 
-          {/* menuItems */}
-          {menuItems.map((item, index) => (
-            <MenuItem
-              key={item.component}
-              {...item}
-              isFirst={index === 0}
-              isLast={index === menuItems.length - 1}
-            />
-          ))}
-        </ScrollView>
-      </View>
-    </View>
+        {/* menuItems */}
+        {menuItems.map((item, index) => (
+          <MenuItem
+            key={item.component}
+            {...item}
+            isFirst={index === 0}
+            isLast={index === menuItems.length - 1}
+          />
+        ))}
+      </ScrollView>
+    </CustomView>
   );
 };

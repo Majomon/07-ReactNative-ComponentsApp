@@ -1,12 +1,14 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {Platform, Text, View} from 'react-native';
 import {CustomView} from '../../components/ui/CustomView';
 import {Title} from '../../components/ui/Title';
 import {Modal} from 'react-native';
 import {Button} from '../../components/ui/Button';
+import { ThemeContext } from '../../context/ThemeContext';
 
 export const ModalScreen = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const {colors} = useContext(ThemeContext);
 
   return (
     <CustomView margin>
@@ -15,7 +17,7 @@ export const ModalScreen = () => {
       <Button text="Abrir modal" onPress={() => setIsVisible(true)} />
 
       <Modal visible={isVisible} animationType="slide">
-        <View style={{flex: 1, backgroundColor: 'rgba(0,0,0,0.1)'}}>
+        <View style={{flex: 1, backgroundColor:colors.background}}>
           <View style={{paddingHorizontal: 10}}>
             <Title text="Modal Content" />
           </View>

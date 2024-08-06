@@ -1,10 +1,8 @@
-import React, {useContext} from 'react';
-import {ScrollView, View} from 'react-native';
-import {globalStyles} from '../../../config/theme/theme';
-import {MenuItem} from '../../components/ui/MenuItem';
-import {Title} from '../../components/ui/Title';
-import {ThemeContext} from '../../context/ThemeContext';
-import {CustomView} from '../../components/ui/CustomView';
+import React from 'react';
+import { ScrollView, View } from 'react-native';
+import { CustomView } from '../../components/ui/CustomView';
+import { MenuItem } from '../../components/ui/MenuItem';
+import { Title } from '../../components/ui/Title';
 
 const animationMenuItems = [
   {
@@ -71,10 +69,9 @@ const uiMenuItems = [
 ];
 
 export const HomeScreen = () => {
-  const {colors} = useContext(ThemeContext);
 
   return (
-    <CustomView>
+    <CustomView margin>
       {/* Renderiza todo de una, no bajo demanda como el Flatlist */}
       <ScrollView>
         <Title text="Opciones de menú" />

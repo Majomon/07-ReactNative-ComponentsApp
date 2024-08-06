@@ -1,9 +1,8 @@
-import React, {useState} from 'react';
-import {CustomView} from '../../components/ui/CustomView';
-import {Card} from '../../components/ui/Card';
-import {Switch} from 'react-native';
-import {CustomSwitch} from '../../components/ui/CustomSwitch';
-import {Separator} from '../../components/ui/Separator';
+import React, { useState } from 'react';
+import { Card } from '../../components/ui/Card';
+import { CustomSwitch } from '../../components/ui/CustomSwitch';
+import { CustomView } from '../../components/ui/CustomView';
+import { Separator } from '../../components/ui/Separator';
 
 export const SwitchScreen = () => {
   /*  const [isEnabled, setIsEnabled] = useState(false);
@@ -14,6 +13,7 @@ export const SwitchScreen = () => {
     isHungry: false,
     isHappy: true,
   });
+  
 
   return (
     <CustomView style={{marginTop: 100, marginHorizontal: 10}}>

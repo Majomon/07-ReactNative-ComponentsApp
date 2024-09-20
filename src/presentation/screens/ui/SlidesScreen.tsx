@@ -1,5 +1,5 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {useContext, useRef, useState} from 'react';
+import { useNavigation } from '@react-navigation/native';
+import React, { useContext, useRef, useState } from 'react';
 import {
   FlatList,
   Image,
@@ -10,9 +10,9 @@ import {
   useWindowDimensions,
   View,
 } from 'react-native';
-import {Button} from '../../components/ui/Button';
-import {ThemeContext} from '../../context/ThemeContext';
-import {globalStyles, colors} from '../../../config/theme/theme';
+import { globalStyles } from '../../../config/theme/theme';
+import { Button } from '../../components/ui/Button';
+import { ThemeContext } from '../../context/ThemeContext';
 
 interface Slide {
   title: string;
